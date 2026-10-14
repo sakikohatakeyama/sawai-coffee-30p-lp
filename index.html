@@ -3,262 +3,218 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>澤井珈琲ドリップコーヒー オールスターズ30｜ドリップバッグ30袋入り 予約販売</title>
-<meta name="description" content="澤井珈琲ドリップコーヒー オールスターズ30。30種類ぜんぶ違うドリップバッグが1袋ずつ入った30袋セット。予約販売限定価格2,250円（税込）送料無料・ポイント2倍。">
+<title>澤井珈琲ドリップコーヒー オールスターズ30｜商品ページ</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
+/* JPG画像にして商品ページに載せる前提のため、動き・リンクはなし */
 :root{
   --red:#c4161c;
+  --red-fv:#c4171b;
   --red-logo:#d0121c;
+  --yellow:#ffe644;
   --cream:#faf5ec;
   --cream-dk:#f1e6d3;
   --line:#e6d8c2;
   --brown:#3a2318;
   --brown-lt:#7a5c4a;
-  --gold:#b8913f;
   --ink:#2a1a12;
   --white:#fff;
   --col:560px;  /* ページの幅（スマホ基準の1カラム） */
-  /* 日本語：ヒラギノ角ゴ → Noto Sans JP／数字・英字：Jost */
   --jp:"Jost","Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic","Meiryo",sans-serif;
   --num:"Jost","Helvetica Neue",Helvetica,Arial,"Hiragino Sans","Noto Sans JP",sans-serif;
-  /* 4つの味わいタイプの色（特集ページと同じ） */
   --cat-a:#e58a5f;
   --cat-b:#d4628b;
   --cat-c:#b8862b;
   --cat-d:#4a2c1f;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
 body{font-family:var(--jp);font-feature-settings:"palt";color:var(--ink);background:var(--cream-dk);line-height:1.8;-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
-a{color:inherit}
-.page{max-width:var(--col);margin:0 auto;background:var(--cream);overflow:hidden;box-shadow:0 0 40px rgba(58,35,24,.08)}
-.in{padding:0 22px}
-
-/* スクロールでふわっと */
-.rv{opacity:0;transform:translateY(20px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
-.rv.on{opacity:1;transform:none}
+img{max-width:100%;height:auto;display:block}
+.page{max-width:var(--col);margin:0 auto;background:var(--cream);overflow:hidden}
+.in{padding:0 18px}
 
 /* ===== ヘッダー ===== */
-.hd{background:var(--red-logo);height:56px;display:flex;align-items:center;justify-content:center}
-.hd img{height:24px;width:auto}
+.hd{background:var(--red-logo);height:60px;display:flex;align-items:center;justify-content:center}
+.hd img{height:26px;width:auto}
 
-/* ===== FV（特集ページのスマホFVと同じ：画像＋流れる2列＋カップ） ===== */
-.fv{position:relative;overflow:hidden;background:#c4171b}
-.fv>img:first-child{width:100%;height:auto}
-.fv-row{position:absolute;left:0;right:0;height:16.53%;overflow:hidden}
-.fv-row.r1{top:60.69%}.fv-row.r2{top:78.62%}
-.fv-track{display:flex;height:100%;width:max-content;animation:rowL 60s linear infinite}
-.fv-row.r2 .fv-track{animation-name:rowR}
-.fv-track>div{flex:none;height:100%;aspect-ratio:313/341;margin-right:10px;display:flex;align-items:center;justify-content:center}
-.fv-track img{width:84%;height:auto;filter:drop-shadow(0 6px 8px rgba(58,35,24,.35))}
-@keyframes rowL{to{transform:translateX(-50%)}}
-@keyframes rowR{from{transform:translateX(-50%)}to{transform:none}}
-.fv-cup{position:absolute;left:59.8%;top:69.6%;width:50.9%;height:auto;z-index:2;pointer-events:none}
+/* ===== FV（キャンペーン終了後もそのまま使える内容） ===== */
+.fv{position:relative;background:var(--red-fv);padding:34px 0 0;text-align:center;color:var(--white)}
+.fv-lbl{display:inline-flex;align-items:center;gap:12px;font-size:19px;font-weight:800;letter-spacing:.06em}
+.fv-lbl::before,.fv-lbl::after{content:"";width:2px;height:22px;background:currentColor;border-radius:2px;transform:rotate(-30deg)}
+.fv-lbl::after{transform:rotate(30deg)}
+.fv-ttl{width:90%;margin:14px auto 0}
+.fv-sub{display:inline-block;margin-top:18px;background:var(--white);color:var(--red);border-radius:999px;padding:7px 22px;font-size:18px;font-weight:800;letter-spacing:.04em}
+.fv-sub b{font-family:var(--num);font-size:24px;font-weight:600;margin:0 1px}
+.fv-wall{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:6px 8px;padding:26px 14px 0;margin-bottom:-2px}
+.fv-wall div{transform:rotate(var(--r));display:flex;align-items:center;justify-content:center}
+.fv-wall img{width:100%;height:auto;filter:drop-shadow(0 5px 6px rgba(60,0,0,.35))}
+.fv-cup{position:absolute;right:-12%;bottom:-6%;width:62%;height:auto;z-index:2}
+.fv-foot{position:relative;height:56px;background:linear-gradient(transparent,rgba(0,0,0,.12))}
+
+/* ===== キャンペーン詳細（1枚の画像。キャンペーン終了後はこのブロックごと削除） ===== */
+.cp{background:var(--red) repeating-linear-gradient(-45deg,rgba(255,255,255,.06) 0 14px,transparent 14px 28px);padding:40px 18px 44px;text-align:center}
+.cp-hd{color:var(--yellow);font-size:24px;font-weight:800;letter-spacing:.06em;line-height:1.4}
+.cp-hd small{display:block;color:var(--white);font-size:16px;letter-spacing:.1em;margin-bottom:4px}
+.cp-card{margin-top:20px;background:var(--white);border-radius:18px;padding:26px 20px 22px}
+.cp-card .lbl{display:inline-block;background:var(--red);color:var(--white);font-size:16px;font-weight:800;letter-spacing:.08em;border-radius:6px;padding:4px 14px}
+.cp-price{margin-top:8px;color:var(--red);line-height:1.1}
+.cp-price b{font-family:var(--num);font-size:68px;font-weight:600;letter-spacing:-.01em}
+.cp-price .yen{font-size:24px;font-weight:800}
+.cp-price small{font-size:15px;font-weight:700;color:var(--brown-lt)}
+.cp-tags{display:flex;justify-content:center;gap:10px;margin-top:14px}
+.cp-tags span{font-size:18px;font-weight:800;border:2px solid var(--red);color:var(--red);border-radius:8px;padding:4px 14px}
+.cp-list{margin-top:20px;border-top:1px solid var(--line);text-align:left}
+.cp-list div{display:flex;gap:10px;padding:13px 0;border-bottom:1px solid var(--line);font-size:16px}
+.cp-list dt{flex:none;width:6.2em;font-weight:700;color:var(--brown-lt)}
+.cp-list dd{font-weight:800}
 
 /* ===== 見出し ===== */
 .sec{padding:64px 0}
-.hd2{text-align:center;margin-bottom:32px}
-.hd2 .en{display:block;font-family:var(--num);font-size:12px;font-weight:600;letter-spacing:.32em;color:var(--red);margin-bottom:10px}
-.hd2 h2{font-size:24px;font-weight:800;line-height:1.5;letter-spacing:.04em}
-.hd2 p{margin-top:12px;font-size:14px;color:var(--brown-lt)}
-.hd2::after{content:"";display:block;width:28px;height:2px;background:var(--red);margin:18px auto 0;border-radius:2px}
+.hd2{text-align:center;margin-bottom:34px}
+.hd2 .en{display:block;font-family:var(--num);font-size:14px;font-weight:600;letter-spacing:.32em;color:var(--red);margin-bottom:8px}
+.hd2 h2{font-size:30px;font-weight:800;line-height:1.45;letter-spacing:.04em}
+.hd2 p{margin-top:12px;font-size:17px;color:var(--brown-lt)}
+.hd2::after{content:"";display:block;width:32px;height:3px;background:var(--red);margin:18px auto 0;border-radius:2px}
 
 /* ===== リード ===== */
-.lead{padding:56px 0 8px;text-align:center}
-.lead h2{font-size:26px;font-weight:800;line-height:1.55;letter-spacing:.04em}
+.lead{padding:60px 0 64px;text-align:center}
+.lead h2{font-size:32px;font-weight:800;line-height:1.5;letter-spacing:.04em}
 .lead h2 em{font-style:normal;color:var(--red)}
-.lead p{margin-top:18px;font-size:15px;line-height:2;color:var(--brown)}
-
-/* ===== 価格カード ===== */
-.price{padding:40px 0 64px}
-.pc{background:var(--white);border-radius:18px;padding:30px 22px 26px;box-shadow:0 14px 34px -18px rgba(58,35,24,.35);text-align:center;position:relative}
-.pc-badge{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--white);background:var(--red);border-radius:999px;padding:5px 16px}
-.pc-name{margin-top:14px;font-size:20px;font-weight:800;line-height:1.45}
-.pc-name small{display:block;font-size:13px;font-weight:700;color:var(--brown-lt);letter-spacing:.06em}
-.pc-amt{margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}
-.pc-amt .lbl{display:block;font-size:13px;font-weight:700;color:var(--red);letter-spacing:.1em}
-.pc-amt b{font-family:var(--num);font-size:58px;font-weight:600;line-height:1.1;color:var(--red);letter-spacing:-.01em}
-.pc-amt .yen{font-size:20px;font-weight:800;color:var(--red)}
-.pc-amt .yen small{font-size:12px;font-weight:700;color:var(--brown-lt);margin-left:2px}
-.pc-tags{display:flex;justify-content:center;gap:8px;margin-top:12px}
-.pc-tags span{font-size:13px;font-weight:700;border:1.5px solid var(--red);color:var(--red);border-radius:6px;padding:3px 12px}
-.pc-per{margin-top:14px;font-size:13px;color:var(--brown-lt)}
-.pc-per b{font-family:var(--num);font-size:17px;color:var(--ink)}
-.pc-list{margin-top:22px;text-align:left;border-top:1px solid var(--line)}
-.pc-list div{display:flex;gap:12px;padding:12px 2px;border-bottom:1px solid var(--line);font-size:14px}
-.pc-list dt{flex:none;width:6.5em;font-weight:700;color:var(--brown-lt)}
-.pc-list dd{font-weight:700}
+.lead p{margin-top:20px;font-size:18px;line-height:2;color:var(--brown)}
 
 /* ===== ポイント ===== */
 .points{background:var(--white)}
-.pt{display:grid;grid-template-columns:96px 1fr;gap:18px;align-items:center;padding:22px 0;border-top:1px solid var(--line)}
+.pt{display:grid;grid-template-columns:104px 1fr;gap:18px;align-items:center;padding:26px 0;border-top:1px solid var(--line)}
 .pt:last-child{border-bottom:1px solid var(--line)}
-.pt-img{width:96px;height:96px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;position:relative}
-.pt-img img{width:54px;filter:drop-shadow(0 4px 6px rgba(58,35,24,.3))}
-.pt-img .big{font-family:var(--num);font-size:40px;font-weight:600;color:var(--red);line-height:1}
-.pt-img .big small{font-size:14px;margin-left:1px}
-.pt-no{display:block;font-family:var(--num);font-size:11px;font-weight:600;letter-spacing:.28em;color:var(--red)}
-.pt h3{font-size:17px;font-weight:800;line-height:1.5;margin:2px 0 6px}
-.pt p{font-size:13.5px;line-height:1.85;color:var(--brown)}
-.dots4{display:grid;grid-template-columns:repeat(2,18px);gap:6px}
-.dots4 i{width:18px;height:18px;border-radius:50%}
+.pt-img{width:104px;height:104px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center}
+.pt-img img{width:58px;filter:drop-shadow(0 4px 6px rgba(58,35,24,.3))}
+.pt-img .big{font-family:var(--num);font-size:44px;font-weight:600;color:var(--red);line-height:1}
+.pt-img .big small{font-size:16px;margin-left:1px}
+.pt-no{display:block;font-family:var(--num);font-size:13px;font-weight:600;letter-spacing:.26em;color:var(--red)}
+.pt h3{font-size:21px;font-weight:800;line-height:1.45;margin:2px 0 6px}
+.pt p{font-size:16px;line-height:1.8;color:var(--brown)}
+.dots4{display:grid;grid-template-columns:repeat(2,20px);gap:7px}
+.dots4 i{width:20px;height:20px;border-radius:50%}
 
 /* ===== 写真 ===== */
-.photo img{width:100%;height:220px;object-fit:cover}
+.photo img{width:100%;height:230px;object-fit:cover}
 
 /* ===== ラインナップ ===== */
-.grp{margin-top:34px}
-.grp:first-of-type{margin-top:0}
+.grp+.grp{margin-top:38px}
 .grp-hd{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-.grp-hd i{width:10px;height:10px;border-radius:50%;background:var(--c)}
-.grp-hd b{font-size:16px;font-weight:800}
-.grp-hd span{font-family:var(--num);font-size:12px;font-weight:600;color:var(--brown-lt);letter-spacing:.1em}
+.grp-hd i{width:12px;height:12px;border-radius:50%;background:var(--c)}
+.grp-hd b{font-size:19px;font-weight:800}
+.grp-hd span{font-family:var(--num);font-size:15px;font-weight:600;color:var(--brown-lt)}
 .grp-hd::after{content:"";flex:1;height:1px;background:var(--line)}
-.grp-hd .lt{font-size:12px;color:var(--brown-lt);font-weight:500}
-.bags{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 10px}
+.bags{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 8px}
 .bg{text-align:center}
-.bg-img{aspect-ratio:1/1.1;display:flex;align-items:center;justify-content:center;background:var(--white);border-radius:12px;padding:10px}
+.bg-img{aspect-ratio:1/1.08;display:flex;align-items:center;justify-content:center;background:var(--white);border-radius:12px;padding:10px}
 .bg-img img{max-height:100%;width:auto;filter:drop-shadow(0 4px 6px rgba(58,35,24,.28))}
-.bg p{margin-top:6px;font-size:11px;letter-spacing:-.01em;font-weight:700;line-height:1.4}
-.bg p small{display:block;font-family:var(--num);font-size:10px;font-weight:600;color:var(--brown-lt);letter-spacing:.06em}
+.bg p{margin-top:7px;font-size:13px;font-weight:700;line-height:1.4}
+.bg p small{display:block;font-family:var(--num);font-size:12px;font-weight:600;color:var(--brown-lt)}
 
 /* ===== 楽しみ方 ===== */
 .how{background:var(--white)}
 .how-list{display:grid;gap:12px}
-.how-item{background:var(--cream);border-radius:14px;padding:20px 20px 18px}
-.how-item span{font-family:var(--num);font-size:11px;font-weight:600;letter-spacing:.28em;color:var(--red)}
-.how-item h3{font-size:16px;font-weight:800;margin:2px 0 4px}
-.how-item p{font-size:13.5px;color:var(--brown);line-height:1.85}
-
-/* ===== スケジュール ===== */
-.flow{position:relative;display:grid;gap:14px;padding-left:26px}
-.flow::before{content:"";position:absolute;left:7px;top:10px;bottom:10px;width:2px;background:var(--line)}
-.fl{position:relative;background:var(--white);border-radius:14px;padding:16px 18px}
-.fl::before{content:"";position:absolute;left:-25px;top:22px;width:14px;height:14px;border-radius:50%;background:var(--white);border:3px solid var(--red)}
-.fl.on::before{background:var(--red)}
-.fl small{display:block;font-size:12px;font-weight:700;color:var(--red);letter-spacing:.08em}
-.fl b{display:block;font-size:17px;font-weight:800}
-.fl b .n{font-family:var(--num);font-size:22px;font-weight:600;margin-right:1px}
-.fl p{font-size:13px;color:var(--brown-lt)}
+.how-item{background:var(--cream);border-radius:14px;padding:22px 20px 20px}
+.how-item span{font-family:var(--num);font-size:13px;font-weight:600;letter-spacing:.26em;color:var(--red)}
+.how-item h3{font-size:20px;font-weight:800;margin:2px 0 4px;line-height:1.5}
+.how-item p{font-size:16px;color:var(--brown);line-height:1.8}
 
 /* ===== 商品詳細 ===== */
-.spec{background:var(--white)}
-.spec table{width:100%;border-collapse:collapse;font-size:14px}
-.spec th,.spec td{padding:14px 4px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.spec table{width:100%;border-collapse:collapse;font-size:17px}
+.spec th,.spec td{padding:16px 4px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
 .spec tr:first-child th,.spec tr:first-child td{border-top:1px solid var(--line)}
-.spec th{width:7.5em;font-weight:700;color:var(--brown-lt)}
+.spec th{width:5.5em;font-weight:700;color:var(--brown-lt)}
 .spec td{font-weight:700}
-.spec td b{font-family:var(--num);font-size:18px;font-weight:600}
-.note{margin-top:20px;background:var(--cream);border-radius:12px;padding:16px 18px;font-size:12.5px;line-height:1.85;color:var(--brown)}
-.note li{list-style:none;padding-left:1em;text-indent:-1em}
 
-/* ===== 特集ページへ・フッター ===== */
-.more{padding:48px 0 56px;text-align:center}
-.more p{font-size:14px;color:var(--brown);margin-bottom:16px}
-.more a{display:flex;align-items:center;justify-content:center;gap:10px;height:58px;border-radius:999px;background:var(--red);color:var(--white);font-weight:800;font-size:16px;text-decoration:none;box-shadow:0 6px 0 var(--red-dk,#9c0f14)}
-.more a::after{content:"";width:8px;height:8px;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg)}
-.ft{background:var(--red-logo);padding:28px 0 32px;text-align:center;color:var(--white)}
-.ft img{height:24px;width:auto;margin:0 auto 10px}
-.ft small{font-family:var(--num);font-size:11px;letter-spacing:.1em;opacity:.85}
-
-@media (prefers-reduced-motion:reduce){
-  .rv{opacity:1;transform:none;transition:none}
-  .fv-track{animation:none}
-}
+/* ===== フッター ===== */
+.ft{background:var(--red-logo);padding:30px 0;text-align:center}
+.ft img{height:26px;width:auto;margin:0 auto}
 </style>
 </head>
 <body>
 <div class="page">
 
-<header class="hd">
-  <a href="https://www.rakuten.co.jp/sawaicoffee-tea/" target="_blank" rel="noopener"><img src="img/logo.png" width="960" height="160" alt="SAWAI COFFEE 澤井珈琲"></a>
-</header>
+<header class="hd"><img src="img/logo.png" width="960" height="160" alt="SAWAI COFFEE 澤井珈琲"></header>
 
 <!-- ===== FV ===== -->
 <section class="fv">
-  <img src="img/fv-sp.jpg" width="1500" height="2063" alt="お得なご予約キャンペーン　澤井珈琲ドリップコーヒー オールスターズ30　ドリップバッグ30袋入り　予約販売限定価格 2,250円（税込）送料無料　ポイント2倍　予約受付期間：10月24日00:00〜11月15日10:00">
-  <div class="fv-row r1" aria-hidden="true"><div class="fv-track" id="tr1"></div></div>
-  <div class="fv-row r2" aria-hidden="true"><div class="fv-track" id="tr2"></div></div>
-  <img class="fv-cup" src="img/fv-sp-cup.webp" width="800" height="783" alt="" aria-hidden="true">
+  <p class="fv-lbl">30種類を飲み比べ</p>
+  <img class="fv-ttl" src="img/title.png" width="1400" height="423" alt="澤井珈琲ドリップコーヒー オールスターズ30">
+  <p class="fv-sub">ドリップバッグ<b>30</b>袋入り</p>
+  <div class="fv-wall" id="wall" aria-hidden="true"></div>
+  <img class="fv-cup" src="img/fv-sp-cup.webp" width="800" height="783" alt="">
+  <div class="fv-foot"></div>
+</section>
+
+<!-- ===== キャンペーン詳細（1枚）：予約キャンペーン終了後はこのブロックごと削除 ===== -->
+<section class="cp">
+  <p class="cp-hd"><small>＼ 発売日11月15日 ／</small>お得なご予約キャンペーン<br>開催中！</p>
+  <div class="cp-card">
+    <span class="lbl">予約販売限定価格</span>
+    <p class="cp-price"><b>2,250</b><span class="yen">円</span><small>（税込）</small></p>
+    <div class="cp-tags"><span>送料無料</span><span>ポイント2倍</span></div>
+    <dl class="cp-list">
+      <div><dt>予約受付期間</dt><dd>10月24日（土）00:00〜<br>11月15日（日）10:00</dd></div>
+      <div><dt>発売日</dt><dd>11月15日（日）</dd></div>
+    </dl>
+  </div>
 </section>
 
 <!-- ===== リード ===== -->
 <section class="lead">
-  <div class="in rv">
+  <div class="in">
     <h2>30袋、<em>ぜんぶ違う</em>珈琲。</h2>
     <p>澤井珈琲のドリップバッグ30種類を、<br>1袋ずつ詰め合わせました。<br>毎日ちがう一杯で、<br>あなたの「好き」が見つかります。</p>
-  </div>
-</section>
-
-<!-- ===== 価格 ===== -->
-<section class="price">
-  <div class="in">
-    <div class="pc rv">
-      <span class="pc-badge">予約販売限定</span>
-      <p class="pc-name"><small>澤井珈琲ドリップコーヒー</small>オールスターズ30</p>
-      <div class="pc-amt">
-        <span class="lbl">予約販売限定価格</span>
-        <b>2,250</b><span class="yen">円<small>（税込）</small></span>
-        <div class="pc-tags"><span>送料無料</span><span>ポイント2倍</span></div>
-        <p class="pc-per">1袋あたり <b>75</b>円</p>
-      </div>
-      <!-- ▼ 内容・予約受付期間・発売日（下の商品詳細も同じ内容） -->
-      <dl class="pc-list">
-        <div><dt>内容</dt><dd>ドリップバッグ30袋<br>（30種類×各1袋）</dd></div>
-        <div><dt>予約受付期間</dt><dd>10月24日（土）00:00〜<br>11月15日（日）10:00</dd></div>
-        <div><dt>発売日</dt><dd>11月15日（日）</dd></div>
-      </dl>
-    </div>
   </div>
 </section>
 
 <!-- ===== ポイント ===== -->
 <section class="sec points">
   <div class="in">
-    <div class="hd2 rv">
+    <div class="hd2">
       <span class="en">POINT</span>
       <h2>オールスターズ30の<br>3つのポイント</h2>
     </div>
-    <div class="pt rv">
+    <div class="pt">
       <div class="pt-img"><span class="big">30<small>種</small></span></div>
       <div>
         <span class="pt-no">POINT 01</span>
-        <h3>30袋すべて、ちがう銘柄</h3>
-        <p>定番のマイルドブレンドから人気のやくもブレンドまで。同じ銘柄はひとつも入っていません。</p>
+        <h3>30袋すべて、<br>ちがう銘柄</h3>
+        <p>定番のマイルドブレンドから人気のやくもブレンドまで。同じ銘柄はひとつもありません。</p>
       </div>
     </div>
-    <div class="pt rv">
+    <div class="pt">
       <div class="pt-img"><span class="dots4"><i style="background:var(--cat-a)"></i><i style="background:var(--cat-b)"></i><i style="background:var(--cat-c)"></i><i style="background:var(--cat-d)"></i></span></div>
       <div>
         <span class="pt-no">POINT 02</span>
-        <h3>4つの味わいで飲み比べ</h3>
-        <p>まろやか・香り華やか・バランス・ビター。飲み比べるうちに、自分好みの味がわかります。</p>
+        <h3>4つの味わいで<br>飲み比べ</h3>
+        <p>まろやか・香り華やか・バランス・ビター。自分好みの味がわかります。</p>
       </div>
     </div>
-    <div class="pt rv">
-      <div class="pt-img"><img src="img/pk-yakumo.webp" alt="" loading="lazy"></div>
+    <div class="pt">
+      <div class="pt-img"><img src="img/pk-yakumo.webp" alt=""></div>
       <div>
         <span class="pt-no">POINT 03</span>
-        <h3>1杯ずつのドリップバッグ</h3>
-        <p>カップにセットして、お湯を注ぐだけ。いつでも手軽に、淹れたての香りを楽しめます。</p>
+        <h3>1杯ずつの<br>ドリップバッグ</h3>
+        <p>カップにセットして、お湯を注ぐだけ。手軽に淹れたての香りを楽しめます。</p>
       </div>
     </div>
   </div>
 </section>
 
-<div class="photo"><img src="img/photo.jpg" width="2500" height="800" alt="ドリップバッグと、カップに注いだコーヒー" loading="lazy"></div>
+<div class="photo"><img src="img/photo.jpg" width="2500" height="800" alt="ドリップバッグと、カップに注いだコーヒー"></div>
 
 <!-- ===== ラインナップ ===== -->
 <section class="sec lineup">
   <div class="in">
-    <div class="hd2 rv">
+    <div class="hd2">
       <span class="en">LINE UP</span>
       <h2>入っている30種類</h2>
-      <p>4つの味わいタイプに分けてご紹介します。</p>
+      <p>4つの味わいタイプに分けてご紹介</p>
     </div>
     <div id="groups"></div>
   </div>
@@ -267,68 +223,33 @@ a{color:inherit}
 <!-- ===== 楽しみ方 ===== -->
 <section class="sec how">
   <div class="in">
-    <div class="hd2 rv">
+    <div class="hd2">
       <span class="en">HOW TO ENJOY</span>
       <h2>30袋の楽しみ方</h2>
     </div>
     <div class="how-list">
-      <div class="how-item rv"><span>IDEA 01</span><h3>1日1袋で、ひと月の飲み比べ</h3><p>毎朝ちがう銘柄を1袋ずつ。30日かけて、澤井珈琲の味をめぐります。</p></div>
-      <div class="how-item rv"><span>IDEA 02</span><h3>家族や友だちと、きき珈琲</h3><p>2〜3種類を同時に淹れて「どれが好き？」。好みの違いで盛り上がります。</p></div>
-      <div class="how-item rv"><span>IDEA 03</span><h3>お気に入りは、単品でたっぷり</h3><p>「これだ！」と思った銘柄は、単品のドリップバッグで楽しめます。</p></div>
+      <div class="how-item"><span>IDEA 01</span><h3>1日1袋で、ひと月の飲み比べ</h3><p>毎朝ちがう銘柄を1袋ずつ。30日かけて、澤井珈琲の味をめぐります。</p></div>
+      <div class="how-item"><span>IDEA 02</span><h3>家族や友だちと、きき珈琲</h3><p>2〜3種類を同時に淹れて「どれが好き？」。好みの違いで盛り上がります。</p></div>
+      <div class="how-item"><span>IDEA 03</span><h3>お気に入りは、単品でたっぷり</h3><p>「これだ！」と思った銘柄は、単品のドリップバッグで楽しめます。</p></div>
     </div>
   </div>
 </section>
 
-<!-- ===== スケジュール ===== -->
-<section class="sec schedule">
-  <div class="in">
-    <div class="hd2 rv">
-      <span class="en">SCHEDULE</span>
-      <h2>ご予約から発売まで</h2>
-    </div>
-    <div class="flow">
-      <div class="fl on rv"><small>予約受付開始</small><b><span class="n">10</span>月<span class="n">24</span>日（土）00:00</b><p>予約販売限定価格・送料無料・ポイント2倍でご予約いただけます。</p></div>
-      <div class="fl rv"><small>予約受付終了</small><b><span class="n">11</span>月<span class="n">15</span>日（日）10:00</b><p>予約販売限定価格は、この日時までのご注文が対象です。</p></div>
-      <div class="fl rv"><small>発売日</small><b><span class="n">11</span>月<span class="n">15</span>日（日）</b></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 商品詳細 ===== -->
+<!-- ===== 商品詳細（キャンペーン終了後も使える内容のみ） ===== -->
 <section class="sec spec">
   <div class="in">
-    <div class="hd2 rv">
+    <div class="hd2">
       <span class="en">ITEM</span>
       <h2>商品詳細</h2>
     </div>
-    <table class="rv">
-      <tr><th>商品名</th><td>澤井珈琲ドリップコーヒー<br>オールスターズ30（予約販売）</td></tr>
-      <tr><th>予約限定価格</th><td><b>2,250</b>円（税込）</td></tr>
-      <tr><th>送料</th><td>送料無料</td></tr>
+    <table>
+      <tr><th>商品名</th><td>澤井珈琲ドリップコーヒー<br>オールスターズ30</td></tr>
       <tr><th>内容量</th><td>ドリップバッグ30袋<br>（30種類×各1袋）</td></tr>
-      <tr><th>予約受付期間</th><td>10月24日（土）00:00〜<br>11月15日（日）10:00</td></tr>
-      <tr><th>発売日</th><td>11月15日（日）</td></tr>
-      <tr><th>ポイント</th><td>ポイント2倍</td></tr>
     </table>
-    <ul class="note rv">
-      <li>※予約商品のため、他の商品と同時にご注文の場合は発送時期が異なることがあります。</li>
-    </ul>
   </div>
 </section>
 
-<!-- ===== 特集ページへ ===== -->
-<section class="more">
-  <div class="in rv">
-    <p>30種類の味わいを、もっと詳しく。</p>
-    <!-- ▼ 特集ページのURL（楽天GOLDに公開したURLに差し替え） -->
-    <a href="https://sakikohatakeyama.github.io/sawai-coffee-30p-fukubukuro/" target="_blank" rel="noopener">特集ページを見る</a>
-  </div>
-</section>
-
-<footer class="ft">
-  <a href="https://www.rakuten.co.jp/sawaicoffee-tea/" target="_blank" rel="noopener"><img src="img/logo.png" width="960" height="160" alt="澤井珈琲 トップページへ" loading="lazy"></a>
-  <small>&copy; SAWAI COFFEE</small>
-</footer>
+<footer class="ft"><img src="img/logo.png" width="960" height="160" alt="SAWAI COFFEE 澤井珈琲"></footer>
 
 </div>
 
@@ -368,28 +289,18 @@ const coffees=[
 ];
 const CAT={a:{n:'まろやか・やさしい',c:'var(--cat-a)'},b:{n:'香り華やか・フルーティー',c:'var(--cat-b)'},c:{n:'バランス・コク',c:'var(--cat-c)'},d:{n:'しっかりビター',c:'var(--cat-d)'}};
 
-/* FV：袋が流れる2列 */
-(()=>{
-  const cell=o=>`<div><img src="img/${o.img}" alt=""></div>`;
-  const a=coffees.filter((_,i)=>i%2===0),b=coffees.filter((_,i)=>i%2===1);
-  document.getElementById('tr1').innerHTML=a.map(cell).join('').repeat(2);
-  document.getElementById('tr2').innerHTML=b.map(cell).join('').repeat(2);
-})();
+/* FV：30袋を5列×6段に並べる（少しずつ傾ける） */
+const tilt=[-6,4,-3,6,-5,3,-4,5,-2,4];
+document.getElementById('wall').innerHTML=coffees.map((o,i)=>`<div style="--r:${tilt[i%10]}deg"><img src="img/${o.img}" alt=""></div>`).join('');
 
-/* ラインナップ：味わいタイプごと（長い銘柄名は「ブレンド」の前後で改行） */
-const nm=n=>n.length<=8?n:n.replace(' ','<br>').replace(/^(ブレンド)(.+)$/,'$1<br>$2').replace(/^(.+?)(ブレンド)$/,'$1<br>$2');
-(()=>{
-  let n=0;
-  document.getElementById('groups').innerHTML=Object.keys(CAT).map(k=>{
-    const list=coffees.filter(o=>o.cat===k);
-    return `<div class="grp rv"><div class="grp-hd" style="--c:${CAT[k].c}"><i></i><b>${CAT[k].n}</b><span>${list.length}</span></div>
-      <div class="bags">${list.map(o=>`<div class="bg"><div class="bg-img"><img src="img/${o.img}" alt="${o.name}" loading="lazy" decoding="async"></div><p><small>${String(coffees.indexOf(o)+1).padStart(2,'0')}</small>${nm(o.name)}</p></div>`).join('')}</div></div>`;
-  }).join('');
-})();
-
-/* スクロールでふわっと */
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+/* ラインナップ：長い銘柄名は区切りのよい所で改行 */
+const BR={'プレミアムゴールド':'プレミアム<br>ゴールド','リッチヨーロピアン':'リッチ<br>ヨーロピアン','ビタークラシック':'ビター<br>クラシック'};
+const nm=n=>BR[n]||(n.length<=7?n:n.replace(' ','<br>').replace(/^(ブレンド)(.+)$/,'$1<br>$2').replace(/^(.+?)(ブレンド)$/,'$1<br>$2'));
+document.getElementById('groups').innerHTML=Object.keys(CAT).map(k=>{
+  const list=coffees.filter(o=>o.cat===k);
+  return `<div class="grp"><div class="grp-hd" style="--c:${CAT[k].c}"><i></i><b>${CAT[k].n}</b><span>${list.length}</span></div>
+    <div class="bags">${list.map(o=>`<div class="bg"><div class="bg-img"><img src="img/${o.img}" alt="${o.name}"></div><p><small>${String(coffees.indexOf(o)+1).padStart(2,'0')}</small>${nm(o.name)}</p></div>`).join('')}</div></div>`;
+}).join('');
 </script>
 </body>
 </html>
