@@ -47,11 +47,12 @@ img{max-width:100%;height:auto;display:block}
 .fv-ttl{width:90%;margin:14px auto 0}
 .fv-sub{display:inline-block;margin-top:18px;background:var(--white);color:var(--red);border-radius:999px;padding:7px 22px;font-size:18px;font-weight:800;letter-spacing:.04em}
 .fv-sub b{font-family:var(--num);font-size:24px;font-weight:600;margin:0 1px}
-.fv-wall{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:6px 8px;padding:26px 14px 0;margin-bottom:-2px}
-.fv-wall div{transform:rotate(var(--r));display:flex;align-items:center;justify-content:center}
-.fv-wall img{width:100%;height:auto;filter:drop-shadow(0 5px 6px rgba(60,0,0,.35))}
-.fv-cup{position:absolute;right:-12%;bottom:-6%;width:62%;height:auto;z-index:2}
-.fv-foot{position:relative;height:56px;background:linear-gradient(transparent,rgba(0,0,0,.12))}
+.fv-wall{position:relative;height:400px;overflow:hidden;margin-top:26px}
+/* 袋を斜めに並べる（4段。画面の外まではみ出す） */
+.fv-tilt{position:absolute;left:50%;top:18px;display:grid;gap:12px;transform:translateX(-50%) rotate(-14deg)}
+.fv-line{display:flex;gap:12px}
+.fv-line:nth-child(even){transform:translateX(56px)}
+.fv-line img{flex:none;width:104px;height:auto;filter:drop-shadow(0 6px 8px rgba(60,0,0,.4))}
 
 /* ===== キャンペーン詳細（1枚の画像。キャンペーン終了後はこのブロックごと削除） ===== */
 .cp{background:var(--red) repeating-linear-gradient(-45deg,rgba(255,255,255,.06) 0 14px,transparent 14px 28px);padding:40px 18px 44px;text-align:center}
@@ -145,9 +146,7 @@ img{max-width:100%;height:auto;display:block}
   <p class="fv-lbl">30種類を飲み比べ</p>
   <img class="fv-ttl" src="img/title.png" width="1400" height="444" alt="澤井珈琲ドリップコーヒー オールスターズ30">
   <p class="fv-sub">ドリップバッグ<b>30</b>袋入り</p>
-  <div class="fv-wall" id="wall" aria-hidden="true"></div>
-  <img class="fv-cup" src="img/fv-sp-cup.webp" width="800" height="783" alt="">
-  <div class="fv-foot"></div>
+  <div class="fv-wall" aria-hidden="true"><div class="fv-tilt" id="wall"></div></div>
 </section>
 
 <!-- ===== キャンペーン詳細（1枚）：予約キャンペーン終了後はこのブロックごと削除 ===== -->
@@ -289,9 +288,8 @@ const coffees=[
 ];
 const CAT={a:{n:'まろやか・やさしい',c:'var(--cat-a)'},b:{n:'香り華やか・フルーティー',c:'var(--cat-b)'},c:{n:'バランス・コク',c:'var(--cat-c)'},d:{n:'しっかりビター',c:'var(--cat-d)'}};
 
-/* FV：30袋を5列×6段に並べる（少しずつ傾ける） */
-const tilt=[-6,4,-3,6,-5,3,-4,5,-2,4];
-document.getElementById('wall').innerHTML=coffees.map((o,i)=>`<div style="--r:${tilt[i%10]}deg"><img src="img/${o.img}" alt=""></div>`).join('');
+/* FV：袋を斜めに4段×9袋（30種を順にくり返す） */
+document.getElementById('wall').innerHTML=[0,1,2,3].map(r=>'<div class="fv-line">'+Array.from({length:9},(_,i)=>`<img src="img/${coffees[(r*9+i+r*2)%30].img}" alt="">`).join('')+'</div>').join('');
 
 /* ラインナップ：長い銘柄名は区切りのよい所で改行 */
 const BR={'プレミアムゴールド':'プレミアム<br>ゴールド','リッチヨーロピアン':'リッチ<br>ヨーロピアン','ビタークラシック':'ビター<br>クラシック'};
